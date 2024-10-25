@@ -57,7 +57,7 @@ export function CarrosselAvisos(){
         { avisos.map(aviso => (
           <div className="min-w-full max-w-full grid place-items-center">
             <article
-              className="bg-white w-4/5 mr-1 min-h-36 overflow-hidden flex flex-col gap-2 rounded-md text-xs p-2"
+              className="bg-white dark:text-black w-4/5 mr-1 min-h-36 overflow-hidden flex flex-col gap-2 rounded-md text-xs p-2"
               >
               <div className="flex items-center gap-2">
                 <h3 className="text-sm font-medium font-title leading-normal">{aviso.titulo}</h3>

@@ -68,7 +68,7 @@ export default function PerfilAluno(){
   }
 
   return(
-    <div className="bg-white rounded-md flex flex-col gap-5 py-4 px-4">
+    <div className="bg-white dark:bg-azul-800 dark:text-azul-50 rounded-md flex flex-col gap-5 py-4 px-4">
       {/** Seção do perfil do aluno */}
       <section className="flex gap-4 items-center">
         <figure className="size-20">
@@ -93,7 +93,7 @@ export default function PerfilAluno(){
             </button>
           </p>
           <p className="flex items-center gap-1">
-            E-mail FATEC: <span className="text-azul-500 underline underline-offset-2">{"Exemplo@fatec.sp.gov.br"}</span>
+            E-mail FATEC: <span className="text-azul-500 dark:text-cyan-300 underline underline-offset-2">{"Exemplo@fatec.sp.gov.br"}</span>
             <button aria-label="Copiar e-mail" onClick={() => copyToClipboard("Exemplo@fatec.sp.gov.br", "E-mail")}>
             { isCopy.isCopyEmail ? (<LuCopyCheck size={13} />) : (<LuCopy size={13} />) }
             </button>
@@ -103,12 +103,12 @@ export default function PerfilAluno(){
       </section>
 
       {/** Seção do curso do aluno */}
-      <section className="flex justify-between">
+      <section className="flex gap-2">
         <h2 className="sr-only">Informações sobre o curso</h2>
 
-        <article className="">
+        <article>
           <h3 className="font-semibold">Rendimento do Curso</h3>
-          <div className="text-sm bg-neutro-50 rounded-md mt-1 p-2">
+          <div className="text-sm bg-neutro-50 dark:bg-azul-950 rounded-md mt-1 p-2">
             <p>
               <HoverInfo
                 text="PP:"
@@ -134,7 +134,7 @@ export default function PerfilAluno(){
 
         <article className="flex flex-col">
           <h3 className="font-semibold">Prazo de Integralização</h3>
-          <div className="text-sm bg-neutro-50 rounded-md mt-1 p-2 flex-1">
+          <div className="text-sm bg-neutro-50 dark:bg-azul-950 rounded-md mt-1 p-2 flex-1">
             <p>Cursando: 1</p>
             <p>Máximo: 10</p>
             <p>Faltam: 9</p>
