@@ -21,7 +21,7 @@ export default function Notas(){
       <Head title="Notas parciais do Estudante" />
       <AuthenticatedLayout>
         {/* Filtro */}
-        <section className="min-w-full flex items-center justify-between bg-neutro-100 max-w-full overflow-y-hidden overflow-x-scroll">
+        <section className="min-w-full flex items-center justify-between bg-neutro-100 dark:bg-azul-800 rounded-md max-w-full overflow-y-hidden overflow-x-scroll">
           {
             data.map(({ ciclo }, i) => (
               <CicloCheckbox

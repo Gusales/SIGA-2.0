@@ -11,7 +11,7 @@ interface CardNotasProps {
 
 export default function CardNotas({ materia }: CardNotasProps){
   return(
-    <article className="w-full min-h-20 bg-white grid grid-cols-[80px,2fr,1fr] rounded-md text-sm shadow">
+    <article className="w-full min-h-20 bg-white text-black grid grid-cols-[80px,2fr,1fr] rounded-md text-sm shadow">
       <div className="min-h-full flex items-center justify-center px-2">
         <p>{materia.sigla.toUpperCase()}</p>
       </div>
