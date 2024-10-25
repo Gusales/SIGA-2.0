@@ -17,8 +17,8 @@ Route::get(uri: '/aluno/home', action: function () {
 })->name(name: "Home");
 
 Route::get(uri: '/aluno/notas', action: function () {
-  return Inertia::render('Aluno/Home');
-})->name(name: "Home");
+  return Inertia::render('Aluno/Notas');
+})->name(name: "Notas");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

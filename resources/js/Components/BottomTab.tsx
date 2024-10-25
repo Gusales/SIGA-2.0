@@ -48,7 +48,7 @@ const links = [
 
 export default function BottomTab(){
   return(
-    <footer className="w-full fixed sm:hidden bottom-0 z-50 shadow bg-white dark:bg-azul-900 rounded-t-md flex items-center justify-between py-3 px-4">
+    <footer className="w-full h-fit sticky sm:hidden bottom-0 z-50 shadow bg-white dark:bg-azul-900 rounded-t-md flex items-center justify-between py-3 px-4">
       {
         links.map(({ Icon, linkTo, nome }, index) => (
           <Link
