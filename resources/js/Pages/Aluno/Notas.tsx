@@ -5,7 +5,7 @@ import { data } from './data/notas-parciais';
 import { AuthenticatedLayout } from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 import CardNotas from "./Components/CardNotas";
-import CicloCheckbox from "./Components/CicloCheckbox";
+import CicloCheckbox from "./Components/Checkbox";
 
 
 export default function Notas(){

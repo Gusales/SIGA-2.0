@@ -1,48 +1,32 @@
 import { Link } from '@inertiajs/react';
-import { BsBackpack, BsBackpackFill } from "react-icons/bs";
-import { GoHome, GoHomeFill, } from "react-icons/go";
+import { GoHome, GoRepo } from "react-icons/go";
 import { LuFileSearch2, LuMailPlus, LuSettings } from 'react-icons/lu';
 
 const links = [
   {
     linkTo: "/home",
     nome: "Home",
-    Icon: {
-      normal: GoHome,
-      fill: GoHomeFill,
-    },
+    Icon: GoHome,
   },
   {
     linkTo: "/notas",
     nome: "Notas",
-    Icon: {
-      normal: LuFileSearch2,
-      fill: LuFileSearch2,
-    },
+    Icon: LuFileSearch2,
   },
   {
     linkTo: "/materias",
     nome: "Matérias",
-    Icon: {
-      normal: BsBackpack,
-      fill: BsBackpackFill,
-    },
+    Icon: GoRepo,
   },
   {
     linkTo: "/solicitacoes",
     nome: "Solicitações",
-    Icon: {
-      normal: LuMailPlus,
-      fill: LuMailPlus,
-    },
+    Icon: LuMailPlus,
   },
   {
     linkTo: "/settings",
     nome: "Ajustes",
-    Icon: {
-      normal: LuSettings,
-      fill: LuSettings,
-    },
+    Icon: LuSettings,
   },
 ]
 
@@ -56,7 +40,7 @@ export default function BottomTab(){
             className="flex flex-col items-center justify-center gap-px font-medium text-azul-800 dark:text-neutro-50"
           >
           {/* TODO: Aqui, se estamos na mesma rota, o ícone tem que aparecer como fill */}
-            <Icon.normal size={24} className="text-[8px]"/>
+            <Icon size={24} className="text-[8px]"/>
             <p className="text-xs">{nome}</p>
 
           </Link>
