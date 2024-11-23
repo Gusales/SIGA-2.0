@@ -24,6 +24,10 @@ Route::get(uri: '/aluno/horario', action: function () {
   return Inertia::render('Aluno/Horario');
 })->name(name: "Horario");
 
+Route::get(uri: '/aluno/solicitacoes', action: function () {
+  return Inertia::render('Aluno/Solicitacoes');
+})->name(name: "Solicitacoes");
+
 Route::middleware('auth')->group(function () {
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
   Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
