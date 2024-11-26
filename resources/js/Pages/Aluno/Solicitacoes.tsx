@@ -66,16 +66,16 @@ export default function Solicitacoes(){
       <AuthenticatedLayout>
         <section>
 
-          <section className="flex w-full bg-zinc-200 rounded overflow-hidden mb-4">
+          <section className="flex w-full bg-zinc-200 dark:bg-azul-800 rounded overflow-hidden mb-4">
             <button
               onClick={() => setTab(state => 'solicitacoes')}
-              className={`${tab === "solicitacoes" && "bg-vermelho-500 text-white font-semibold font-title"} flex-1 rounded py-px`}
+              className={`${tab === "solicitacoes" && "bg-vermelho-500 text-white dark:text-white font-semibold font-title"} flex-1 rounded py-px`}
             >Solicitações</button>
 
 
             <button
               onClick={() => setTab(state => 'mySolicitacoes')}
-              className={`${tab === "mySolicitacoes" && "bg-vermelho-500 text-white font-semibold font-title"} flex-1 rounded py-px`}
+              className={`${tab === "mySolicitacoes" && "bg-vermelho-500 text-white dark:text-white font-semibold font-title"} flex-1 rounded py-px`}
               >Minhas Solicitações</button>
           </section>
 
@@ -85,7 +85,7 @@ export default function Solicitacoes(){
             {
               tab === "solicitacoes" &&
               documentosASolicitar.map((documento, index) => (
-                <div className="grid grid-cols-[9fr,1fr] place-items-start">
+                <div className="grid grid-cols-[9fr,1fr] place-items-start dark:text-black">
                   <DocumentCollapsible
                     title={documento.title}
                     description={documento.description}

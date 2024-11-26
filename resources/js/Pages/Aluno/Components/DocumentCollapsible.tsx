@@ -25,10 +25,10 @@ export function DocumentCollapsible({ title, description, index, downloadLink, s
     <article className="flex flex-col w-full rounded-sm shadow-sm">
       <Accordion type="single" collapsible>
         <AccordionItem value={`documento-${index}`}>
-          <AccordionTrigger className="bg-white p-2 rounded rounded-tr-none text-xs">
+          <AccordionTrigger className="bg-white p-2 rounded rounded-tr-none text-xs shadow">
             { title }
           </AccordionTrigger>
-          <AccordionContent className="bg-zinc-50 p-2 rounded-b flex flex-col">
+          <AccordionContent className="bg-white/90 p-2 rounded-b flex flex-col">
             { description }
 
               {
