@@ -13,10 +13,10 @@ export function AuthenticatedLayout({
 
 
     return (
-      <div className="relative inset-0 *:transition-colors bg-neutro-50 dark:bg-azul-950">
+      <div className="relative inset-0 *:transition-colors dark:bg-azul-950">
         <Header />
 
-        <main className="mt-16 pb-20">
+        <main className="mt-20 pb-20 px-4">
           { children }
         </main>
 
