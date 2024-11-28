@@ -7,7 +7,7 @@ import ToogleDarkMode from './ToogleDarkMode';
 
 export function Header(){
   return(
-    <header className="px-4 py-1 flex justify-between items-center border border-b-neutral-600 bg-white dark:bg-azul-900 shadow">
+    <header className="px-4 fixed top-0 z-50 w-full max-h-16 py-1 flex justify-between items-center border border-b-neutral-600 bg-white dark:bg-azul-900 shadow">
           <figure
             className="max-w-fit max-h-fit flex flex-col flex-1 items-center justify-center gap-2">
             <ApplicationLogo w={100} h={60} className="dark:hidden" />
