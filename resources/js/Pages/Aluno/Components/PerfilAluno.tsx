@@ -80,10 +80,10 @@ export default function PerfilAluno(){
 
 
   return(
-    <div className="bg-white dark:bg-azul-800 dark:text-azul-50 rounded-md flex flex-col gap-5 py-4 px-4">
+    <div className="bg-white dark:bg-azul-800 dark:text-azul-50 sm:bg-transparent dark:sm:bg-transparent rounded-md flex flex-col sm:flex-row gap-5 py-4 px-4 sm:p-0">
       {/** Seção do perfil do aluno */}
       <section className="flex gap-4 items-start">
-        <figure>
+        <figure className="sm:hidden">
           <img
             src={PLACEHOLDER_PROFILE_PIC}
             alt="Foto do aluno"
@@ -102,9 +102,9 @@ export default function PerfilAluno(){
           />
         </figure>
 
-        <section className="text-xs max-w-full">
+        <section className="text-xs max-w-full sm:text-lg">
           {/* Nome do aluno */}
-          <p className="text-base max-w-64 truncate font-title font-bold text-azul-400 dark:text-white">Gustavo Sales da Silva de Souza</p>
+          <p className="text-base sm:text-xl max-w-64 sm:max-w-full truncate font-title font-bold text-azul-400 dark:text-white">Gustavo Sales da Silva de Souza</p>
 
           {/* R.A. */}
           <p className="flex items-center gap-1">
@@ -140,14 +140,14 @@ export default function PerfilAluno(){
       </section>
 
       {/** Seção do curso do aluno */}
-      <section className="">
-        <h2 className="font-bold text-sm text-azul-400 dark:text-white">Progresso do Curso</h2>
+      <section className="flex-1">
+        <h2 className="font-bold text-sm sm:text-lg text-azul-400 dark:text-white">Progresso do Curso</h2>
 
-        <article className="text-xs leading-normal">
+        <article className="text-xs sm:text-base leading-normal">
           <h3 className="font-semibold text-azul-950 dark:text-neutro-50 mt-1">Semestres</h3>
 
           <div className="w-full max-w-[90%] flex items-center gap-1 mt-1">
-            <div className={`w-full grid grid-cols-${10} bg-azul-100 dark:bg-azul-900 rounded-full text-center py-0.5 pl-2`}>
+            <div className={`w-full max-w-96 grid grid-cols-10 bg-azul-100 dark:bg-azul-900 rounded-full text-center py-0.5 pl-2`}>
               { Array.from({ length: 10 }, (_, i) => i + 1).map(semestre => (
                 <div className={`size-4 rounded-full ${semestresConcluidos >= semestre ? "bg-azul-400 text-neutro-50" : semestre <= 2 ? "bg-azul-300 dark:bg-azul-400 text-white dark:text-azul-800" : "bg-azul-200 dark:bg-azul-600 text-azul-500 dark:text-azul-300"} leading-none flex items-center justify-center`}>
                   {semestre}

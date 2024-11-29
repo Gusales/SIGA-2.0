@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { LuCalendar } from "react-icons/lu";
-
+import { LuArrowUpRight, LuCalendar } from "react-icons/lu";
 
 const avisos = [
   {
@@ -34,7 +33,6 @@ const avisos = [
 
 export function CarrosselAvisos(){
   const [current, setCurrent] = useState(0)
-  // const [count, setCount] = useState(avisos.length)
 
   function prev(){
     setCurrent(state => state === 0 ? avisos.length - 1 : state  - 1)
@@ -45,7 +43,7 @@ export function CarrosselAvisos(){
   }
 
   return(
-    <div className="relative flex flex-col justify-around overflow-hidden gap-4 mt-1">
+    <div className="relative flex flex-col justify-around gap-4 mt-1">
       <div className="flex items-center gap-1">
         <p className="sr-only">Slide { current + 1 } de {avisos.length}</p>
         { avisos.map((_, index) => (
@@ -53,36 +51,41 @@ export function CarrosselAvisos(){
         )) }
       </div>
       {/* Slides */}
-      <div className="flex relative items-center justify-between transition-transform ease-out duration-500" style={{ transform: `translateX(-${current * 100}%)` }}>
-        { avisos.map(aviso => (
-          <div className="min-w-full max-w-full grid place-items-center">
-            <article
-              className="bg-white dark:text-black w-4/5 mr-1 min-h-36 overflow-hidden flex flex-col gap-2 rounded-md text-xs p-2"
-              >
-              <div className="flex items-center gap-2">
-                <h3 className="text-sm font-medium font-title leading-normal">{aviso.titulo}</h3>
-                <span className="px-2 rounded-full bg-crayola font-light font-title">{aviso.status}</span>
-              </div>
-              <p className="py-1.5 px-4 bg-azul-400 flex gap-1 font-light text-neutro-200 w-fit rounded-full leading-tight">
-                <LuCalendar size={12} />
-                {aviso.data}
-              </p>
-              <p>{aviso.descricao}</p>
-              <a href="#" className="text-azul-400 underline underline-offset-2 hover:text-azul-300 transition-colors cursor-pointer">Veja mais</a>
-            </article>
-          </div>
-        )) }
+      <div className="overflow-hidden">
+        <div className="flex gap-1 relative items-center justify-between rounded transition-transform ease-out duration-500" style={{ transform: `translateX(calc(-${current * 101}%))` }}>
+          { avisos.map(aviso => (
+            <div className="min-w-full max-w-full grid place-items-center">
+              <article
+                className="bg-white dark:bg-azul-800 dark:text-neutro w-full mr-1 min-h-36 overflow-hidden flex flex-col gap-2 rounded-md text-xs p-2"
+                >
+                <div className="flex items-center gap-2">
+                  <p className="py-1.5 px-4 bg-sky-500 text-xs flex gap-1 font-light text-white w-fit rounded-full leading-tight">
+                    <LuCalendar size={12} />
+                    {aviso.data}
+                  </p>
+                  {aviso.status && (<span className="px-4 py-1.5 rounded-full bg-crayola font-light font-title">{aviso.status}</span>)}
+                </div>
+                  <h3 className="text-xs font-medium font-title leading-normal">{aviso.titulo}</h3>
+                <p className="text-[10px]">{aviso.descricao}</p>
+                <a href="#" className="text-vermelho-400 uppercase transition-colors cursor-pointer flex items-center">
+                  Veja mais
+                  <LuArrowUpRight size={16} />
+                </a>
+              </article>
+            </div>
+          )) }
+        </div>
       </div>
 
       {/* Controles */}
-      <div className="absolute h-full left-0 flex items-center justify-center">
+      <div className="absolute h-full -left-4 top-3 z-[99] flex items-center justify-center opacity-60">
         <button onClick={prev}>
-            <IoIosArrowBack className="text-azul-800 font-bold" size={24} />
+            <IoIosArrowBack className="text-azul-800 dark:text-neutro-50 font-bold" size={24} />
           </button>
       </div>
-      <div className="absolute h-full right-2 flex items-center justify-center">
+      <div className="absolute h-full -right-4 top-3 z-[99] flex items-center justify-center opacity-60">
         <button onClick={next}>
-          <IoIosArrowForward className="text-azul-800 font-bold" size={24} />
+          <IoIosArrowForward className="text-azul-800 dark:text-neutro-50 font-bold" size={24} />
         </button>
       </div>
     </div>

@@ -2,12 +2,11 @@ import CPS_RED from '../../assets/images/logos/cps_red.png';
 import CPS_WHITE from '../../assets/images/logos/cps_white.png';
 import ApplicationLogo from './ApplicationLogo';
 import ApplicationLogoWhite from './ApplicationLogoWhite';
-import MobileMenuLateral from './MobileMenuLateral';
 import ToogleDarkMode from './ToogleDarkMode';
 
 export function Header(){
   return(
-    <header className="px-4 fixed top-0 z-50 w-full max-h-16 py-1 flex justify-between items-center border border-b-neutral-600 bg-white dark:bg-azul-900 shadow">
+    <header className="px-4 fixed top-0 z-50 w-full max-h-16 py-1 flex justify-between items-center bg-white dark:bg-azul-900 shadow">
           <figure
             className="max-w-fit max-h-fit flex flex-col flex-1 items-center justify-center gap-2">
             <ApplicationLogo w={100} h={60} className="dark:hidden" />
@@ -21,10 +20,6 @@ export function Header(){
           </section>
 
           <section className="ml-4 flex gap-4 items-center flex-none justify-between sm:flex-none sm:ml-0 sm:justify-normal">
-            {/* Por o toogle do light e dark mode aqui */}
-            <div className="hidden md:block">
-              <ToogleDarkMode />
-            </div>
 
             <figure className="hidden md:block">
               <a href="https://www.cps.sp.gov.br/" target="_blank">
@@ -33,7 +28,7 @@ export function Header(){
               </a>
             </figure>
 
-            <MobileMenuLateral />
+            <ToogleDarkMode />
           </section>
         </header>
   )

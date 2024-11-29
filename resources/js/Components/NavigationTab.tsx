@@ -1,7 +1,8 @@
 import { Link, usePage } from '@inertiajs/react';
 
+import { CircleUser } from 'lucide-react';
 import { GoHome } from "react-icons/go";
-import { LuCalendarDays, LuFileSearch2, LuGraduationCap } from 'react-icons/lu';
+import { LuFileSearch2, LuGraduationCap } from 'react-icons/lu';
 import { TbFileDownload } from "react-icons/tb";
 
 const links = [
@@ -12,23 +13,23 @@ const links = [
   },
   {
     linkTo: "aluno/notas",
-    nome: "Notas",
+    nome: "Consultas",
     Icon: LuFileSearch2,
   },
   {
-    linkTo: "aluno/horario",
-    nome: "Horário",
-    Icon: LuCalendarDays,
-  },
-  {
     linkTo: "aluno/materias",
-    nome: "Matérias",
+    nome: "Disciplinas",
     Icon: LuGraduationCap,
   },
   {
     linkTo: "aluno/solicitacoes",
     nome: "Solicitações",
     Icon: TbFileDownload,
+  },
+  {
+    linkTo: "aluno/horario",
+    nome: "Perfil",
+    Icon: CircleUser,
   },
 ]
 

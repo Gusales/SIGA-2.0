@@ -13,7 +13,7 @@ export function AuthenticatedLayout({
 
 
     return (
-      <div className="relative inset-0 *:transition-colors dark:bg-azul-950">
+      <div className="relative inset-0 *:transition-colors">
         <Header />
 
         <main className="mt-20 pb-20 px-4">
