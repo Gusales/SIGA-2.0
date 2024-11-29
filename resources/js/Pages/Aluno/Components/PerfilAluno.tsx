@@ -22,7 +22,7 @@ export default function PerfilAluno(){
     isCopyEmail: false
   })
 
-  const semestresConcluidos = 1
+  const semestresConcluidos = 7
 
   // Exibe a mensagem de texto copiado
   const { toast } = useToast()
@@ -146,16 +146,18 @@ export default function PerfilAluno(){
         <article className="text-xs sm:text-base leading-normal">
           <h3 className="font-semibold text-azul-950 dark:text-neutro-50 mt-1">Semestres</h3>
 
-          <div className="w-full max-w-[90%] flex items-center gap-1 mt-1">
-            <div className={`w-full max-w-96 grid grid-cols-10 bg-azul-100 dark:bg-azul-900 rounded-full text-center py-0.5 pl-2`}>
+          <div className="w-full max-w-[90%] flex items-center gap-1 mt-1 relative overflow-hidden">
+            <div className={`flex items-center gap-2 bg-azul-100 dark:bg-azul-900 rounded-full text-center p-1`}>
               { Array.from({ length: 10 }, (_, i) => i + 1).map(semestre => (
-                <div className={`size-4 rounded-full ${semestresConcluidos >= semestre ? "bg-azul-400 text-neutro-50" : semestre <= 2 ? "bg-azul-300 dark:bg-azul-400 text-white dark:text-azul-800" : "bg-azul-200 dark:bg-azul-600 text-azul-500 dark:text-azul-300"} leading-none flex items-center justify-center`}>
+                <div className={`size-4 rounded-full ${semestresConcluidos + 1 === semestre ? "bg-azul-400 text-neutro-50" : semestresConcluidos >= semestre ? "invisible" : "visible bg-azul-200 dark:bg-azul-600 text-azul-500 dark:text-azul-300"} leading-none flex items-center justify-center`}>
                   {semestre}
                 </div>
               )) }
             </div>
 
-            <p>2/10</p>
+            <div className={`absolute h-4 top-1 left-1 rounded-full bg-vermelho-400`} style={{ width: `${semestresConcluidos * 23}px` }} />
+
+            <p>{semestresConcluidos}/10</p>
           </div>
         </article>
 
