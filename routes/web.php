@@ -28,9 +28,9 @@ Route::get(uri: '/aluno/solicitacoes', action: function () {
   return Inertia::render('Aluno/Solicitacoes');
 })->name(name: "aluno/solicitacoes");
 
-Route::get(uri: '/aluno/materias', action: function () {
-  return Inertia::render('Aluno/Solicitacoes');
-})->name(name: "aluno/materias");
+Route::get(uri: '/aluno/disciplinas', action: function () {
+  return Inertia::render('Aluno/Disciplinas');
+})->name(name: "aluno/disciplinas");
 
 Route::middleware('auth')->group(function () {
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
