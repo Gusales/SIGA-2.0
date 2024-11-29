@@ -50,14 +50,14 @@ const links = [
     titulo: "Faltas Parciais",
     descricao: "Fique de olho na frequência",
     icon: UserMinus,
-    linkTo: "aluno/notas"
+    linkTo: "aluno/faltas"
   },
   {
     id: '3',
     titulo: "Histórico Completo",
     descricao: "Histórico completo das disciplinas",
     icon: Book,
-    linkTo: "aluno/notas"
+    linkTo: "aluno/historico"
   },
   {
     id: '4',

@@ -12,12 +12,12 @@ const links = [
     Icon: GoHome,
   },
   {
-    linkTo: "aluno/notas",
+    linkTo: "aluno/consulta",
     nome: "Consultas",
     Icon: LuFileSearch2,
   },
   {
-    linkTo: "aluno/materias",
+    linkTo: "aluno/disciplinas",
     nome: "Disciplinas",
     Icon: LuGraduationCap,
   },
@@ -27,7 +27,7 @@ const links = [
     Icon: TbFileDownload,
   },
   {
-    linkTo: "aluno/horario",
+    linkTo: "aluno/consulta",
     nome: "Perfil",
     Icon: CircleUser,
   },
@@ -44,10 +44,9 @@ export default function Tab(){
           <Link
             href={route(linkTo)}
             key={index}
-            className={`flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-px sm:gap-2 font-medium group ${url === ("/"+linkTo) ? "text-vermelho-500" : "text-azul-800 dark:text-neutro-50"}`}
+            className={`flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-px sm:gap-2 font-medium group ${url === ("/"+linkTo) || ("/"+linkTo === '/aluno/consulta' && (url === '/aluno/faltas' || url === '/aluno/historico' )) ? "text-vermelho-500" : "text-azul-800 dark:text-neutro-50"}`}
             disabled={url === ("/"+linkTo)}
           >
-          {/* TODO: Aqui, se estamos na mesma rota, o ícone tem que aparecer como fill */}
             <Icon size={24} className="text-[8px] sm:text-base"/>
             <p className="text-xs sm:text-base group-hover:underline">{nome}</p>
 

@@ -23,21 +23,21 @@ const links = [
     titulo: "Faltas Parciais",
     descricao: "Fique de olho na frequência",
     icon: UserMinus,
-    linkTo: "aluno/notas" //futuramente, faltas
+    linkTo: "aluno/faltas" //futuramente, faltas
   },
   {
     id: '3',
     titulo: "Histórico Completo",
     descricao: "Histórico completo das disciplinas",
     icon: Book,
-    linkTo: "aluno/notas" //futuramente, historico
+    linkTo: "aluno/historico" //futuramente, historico
   },
   {
     id: '4',
     titulo: "Horário",
     descricao: "Seu horário atualizado",
     icon: Calendar,
-    linkTo: "aluno/horario"
+    linkTo: "aluno/consulta"
   },
 ]
 
