@@ -20,9 +20,9 @@ Route::get(uri: '/aluno/notas', action: function () {
   return Inertia::render('Aluno/Notas');
 })->name(name: "aluno/notas");
 
-Route::get(uri: '/aluno/horario', action: function () {
-  return Inertia::render('Aluno/Horario');
-})->name(name: "aluno/horario");
+Route::get(uri: '/aluno/consulta', action: function () {
+  return Inertia::render('Aluno/Consulta');
+})->name(name: "aluno/consulta");
 
 Route::get(uri: '/aluno/solicitacoes', action: function () {
   return Inertia::render('Aluno/Solicitacoes');
@@ -31,6 +31,14 @@ Route::get(uri: '/aluno/solicitacoes', action: function () {
 Route::get(uri: '/aluno/disciplinas', action: function () {
   return Inertia::render('Aluno/Disciplinas');
 })->name(name: "aluno/disciplinas");
+
+Route::get(uri: '/aluno/faltas', action: function () {
+  return Inertia::render('Aluno/FaltasParciais');
+})->name(name: "aluno/faltas");
+
+Route::get(uri: '/aluno/historico', action: function () {
+  return Inertia::render('Aluno/Historico');
+})->name(name: "aluno/historico");
 
 Route::middleware('auth')->group(function () {
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
